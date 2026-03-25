@@ -126,7 +126,7 @@ body.pagina-carro .modelo {
 }
 
 body.pagina-carro .modelo::before {
-  content: 'â€” LuxCars Collection â€”';
+  content: 'LuxCars Collection';
   display: block;
   font-size: 10px;
   letter-spacing: 4px;
