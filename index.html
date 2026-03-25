@@ -1,34 +1,188 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="LuxCars â€” catÃ¡logo de carros de luxo das marcas Porsche, AMG, BMW e Audi." />
   <title>LuxCars - Carros de Luxo</title>
-  <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
-
-   
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
   <style>
-    html {
-      scroll-behavior: smooth;
+    body.pagina-principal {
+      background-color: var(--dark);
+      color: #e8e8e8;
+    }
+
+    body.pagina-principal header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-gold);
+      padding: 18px 48px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 200;
+    }
+
+    body.pagina-principal header h1 {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    body.pagina-principal nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      gap: 32px;
+    }
+    body.pagina-principal nav a {
+      color: #cccccc;
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+
+    body.pagina-principal nav a:hover {
+      color: var(--gold);
+    }
+
+    body.pagina-principal .destaque {
+      height: 100vh;
+      background:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.7) 100%),
+        url(Fundo.JPG) no-repeat center center / cover;
+      /* gradiente em cima da imagem pra o texto branco ficar legível */
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      padding: 0;
+    }
+
+    body.pagina-principal .texto-destaque {
+      padding-top: 200px;
+      flex-shrink: 0;
+    }
+
+    body.pagina-principal .texto-destaque h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(48px, 7vw, 90px);
+      font-weight: 600;
+      color: #f0f0f0;
+      margin: 0 0 18px 0;
+      letter-spacing: 2px;
+      line-height: 1.1;
+      animation: fadeUp 1s ease both;
+    }
+
+    body.pagina-principal .texto-destaque p {
+      font-size: clamp(14px, 1.8vw, 18px);
+      color: #aaaaaa;
+      font-weight: 300;
+      letter-spacing: 1px;
+      margin: 0;
+      animation: fadeUp 1s ease 0.2s both;
+    }
+
+    body.pagina-principal .secao-marcas {
+      width: 100%;
+      padding: 0 40px 60px 40px;
+      box-sizing: border-box;
+      flex-shrink: 0;
+    }
+
+    body.pagina-principal .titulo-lista-marcas {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      text-align: center;
+      margin: 0 0 24px 0;
+      animation: fadeUp 1s ease 0.4s both;
+    }
+
+    body.pagina-principal .lista-marcas {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      animation: fadeUp 1s ease 0.5s both;
+    }
+
+    body.pagina-principal .marca-item {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+    }
+
+    body.pagina-principal .marca-item img {
+      max-height: 70px;
+      transition: transform 0.3s ease, filter 0.3s ease;
+      filter: brightness(0.9) saturate(0.8);
+    }
+
+    body.pagina-principal .marca-item:hover img {
+      transform: scale(1.12);
+      filter: drop-shadow(0 0 8px rgba(184, 150, 62, 0.5)) brightness(1.1);
+    }
+
+    body.pagina-principal footer {
+      background-color: #070707;
+      color: #555555;
+      text-align: center;
+      padding: 32px 20px;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    body.pagina-principal footer p {
+      margin: 6px 0;
+    }
+
+    body.pagina-principal footer a {
+      color: var(--gold);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    body.pagina-principal footer a:hover {
+      color: var(--gold-light);
     }
   </style>
 </head>
-
-<body>
- <header>
-  <h1>LuxCars</h1>
-  <nav>
-    <ul>
-      <li><a href="#">Início</a></li>
-      <li><a href="Sobre.html">Sobre</a></li>
-      <li><a href="#marcas">Marcas</a></li>
-      <li><a href="#contato">Contato</a></li>
-    </ul>
-  </nav>
-</header>
-
+<body class="pagina-principal">
+  <header>
+    <h1>LuxCars</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">InÃ­cio</a></li>
+        <li><a href="Sobre.html">Sobre</a></li>
+        <li><a href="#marcas">Marcas</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main>
     <section class="destaque">
@@ -36,24 +190,33 @@
         <h2>Dirija o seu sonho</h2>
         <p>Encontre carros de luxo das maiores marcas do mundo.</p>
       </div>
-    <section id="marcas" class="secao-marcas">
-      <h3 class="titulo-lista-marcas">Escolha a sua marca:</h3>
 
-      <div class="lista-marcas">
-        <a href="Porsche.html" class="marca-item"><img src="Porsche/Porsche Logo.png"></a>
-        <a href="AMG.html" class="marca-item"><img src="AMG/AMG.png" ></a>
-        <a href="BMW.html" class="marca-item"><img src="BMW/BMW.png"></a>
-        <a href="Audi.html" class="marca-item"><img src="Audi/Audi.png"></a>
-      </div>
+      <section id="marcas" class="secao-marcas">
+        <h3 class="titulo-lista-marcas">Escolha a sua marca:</h3>
+
+        <div class="lista-marcas">
+          <a href="Porsche.html" class="marca-item">
+            <img src="Porsche/Porsche Logo.png" alt="Logo Porsche" />
+          </a>
+          <a href="AMG.html" class="marca-item">
+            <img src="AMG/AMG.png" alt="Logo AMG" />
+          </a>
+          <a href="BMW.html" class="marca-item">
+            <img src="BMW/BMW.png" alt="Logo BMW" />
+          </a>
+          <a href="Audi.html" class="marca-item">
+            <img src="Audi/Audi.png" alt="Logo Audi" />
+          </a>
+        </div>
+      </section>
     </section>
   </main>
 
   <footer id="contato">
     <p>&copy; 2025 LuxCars. Todos os direitos reservados.</p>
-    <p>Email: contatoluxcars@gmail.com</p>
+    <p>Email: <a href="mailto:contatoluxcars@gmail.com">contatoluxcars@gmail.com</a></p>
     <p>WhatsApp: (18) 99108-4521</p>
   </footer>
-
 </body>
 </html>
 
