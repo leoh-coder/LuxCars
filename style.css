@@ -279,33 +279,99 @@ body.pagina-carro footer {
   border-top: 1px solid var(--border-subtle);
 }
 
+body.pagina-principal footer a,
+body.pagina-carro footer a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+body.pagina-principal footer a:hover,
+body.pagina-carro footer a:hover {
+  color: var(--gold-light);
+}
+
 @media (max-width: 768px) {
-  body.pagina-carro header {
-    padding: 0 20px;
+
+  /* ---- INDEX: header ---- */
+  body.pagina-principal header {
+    padding: 14px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
 
-  body.pagina-carro .logo-esquerda h1 {
-    font-size: 16px;
-    letter-spacing: 2px;
+  body.pagina-principal nav ul {
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  body.pagina-principal nav a {
+    font-size: 10px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ---- INDEX: hero e marcas ---- */
+  body.pagina-principal .texto-destaque {
+    padding-top: 160px;
+  }
+
+  body.pagina-principal .secao-marcas {
+    padding: 0 16px 40px;
+  }
+
+  body.pagina-principal .lista-marcas {
+    gap: 20px;
+  }
+
+  body.pagina-principal .marca-item img {
+    max-height: 44px;
+  }
+
+  /* ---- PÁGINAS DE MARCA: header ---- */
+  body.pagina-carro header {
+    padding: 0 16px;
+    height: auto;
+    min-height: 60px;
+    overflow: visible;
+  }
+
+  body.pagina-carro .cabecalho-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 0;
+    gap: 8px;
+  }
+
+  body.pagina-carro .logo-central {
+    position: static;
+    transform: none;
   }
 
   body.pagina-carro .logo {
-    max-height: 40px;
+    max-height: 36px;
+  }
+
+  body.pagina-carro .logo-esquerda h1 {
+    font-size: 15px;
+    letter-spacing: 2px;
   }
 
   body.pagina-carro .menu-direita ul {
-    gap: 14px;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   body.pagina-carro .menu-direita a {
     font-size: 10px;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
   }
 
+  /* ---- PÁGINAS DE MARCA: conteúdo ---- */
   body.pagina-carro .especificacoes {
     flex-direction: column;
     align-items: center;
-    padding: 40px 20px;
+    padding: 40px 16px;
   }
 
   body.pagina-carro .dados-carro {
@@ -317,29 +383,19 @@ body.pagina-carro footer {
     max-width: 100%;
   }
 
+  /* ---- GALERIA: fotos sem altura fixa ---- */
   body.pagina-carro .galeria {
     grid-template-columns: 1fr;
     gap: 4px;
   }
 
+  body.pagina-carro .galeria img {
+    height: auto;
+    max-height: 280px;
+  }
+
   body.pagina-carro .galeria img:last-child {
-    height: 260px;
-  }
-
-  body.pagina-principal header {
-    padding: 16px 20px;
-  }
-
-  body.pagina-principal .secao-marcas {
-    padding: 0 20px 40px;
-  }
-
-  body.pagina-principal .lista-marcas {
-    gap: 24px;
-  }
-
-  body.pagina-principal .marca-item img {
-    max-height: 50px;
+    height: auto;
+    max-height: 280px;
   }
 }
-
